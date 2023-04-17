@@ -21,16 +21,11 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    getGames();
-  }, [])
-
-
   return (
     <main className='container'>
       <section className='row'>
         <h1 className='text-center'>Memes</h1>
-
+        <button className='btn btn-primary' onClick={()=>getGames()}>Cargar memes</button>
         {loading?<div>Loading...</div>:data.map(e=>(
           <div className="col" style={{marginTop: '20px'}} key={e.id}  data-aos="flip-up" data-aos-duration="1300">
             <h2 className='text-center'>{e.name}</h2>
